@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI Thread to Markdown — Options</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #18181b;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #2563eb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1c1f; --fg: #f4f4f5; --muted: #a1a1aa; --line: #34343a; --accent: #60a5fa; }
+  }
+  /* The browser sizes the options dialog to fit this page. Keep the page's width
+     fixed and the scrollbar's space always reserved, so a scrollbar appearing can't
+     re-wrap the text, change the height and resize the dialog in a loop. */
+  html {
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    background: var(--bg);
+  }
+  body {
+    box-sizing: border-box;
+    width: 440px;
+    margin: 0;
+    padding: 20px 22px 18px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  h1 { font-size: 15px; margin: 0 0 14px; }
+  label.row {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 10px;
+    padding: 9px 0;
+    border-top: 1px solid var(--line);
+    cursor: pointer;
+  }
+  label.row:first-of-type { border-top: 0; }
+  input[type="checkbox"] { margin: 3px 0 0; accent-color: var(--accent); }
+  .hint { display: block; color: var(--muted); font-size: 12.5px; }
+  .field { padding: 10px 0 4px; border-top: 1px solid var(--line); }
+  .field input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 6px;
+    padding: 6px 8px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+  }
+  .status { height: 18px; margin-top: 8px; color: var(--muted); font-size: 12.5px; }
+</style>
+</head>
+<body>
+  <h1>AI Thread to Markdown</h1>
+
+  <label class="row">
+    <input type="checkbox" id="frontMatter">
+    <span>Add YAML front matter
+      <span class="hint">Title, source URL, platform and export time at the top of the file.</span></span>
+  </label>
+
+  <label class="row">
+    <input type="checkbox" id="nestHeadings">
+    <span>Nest reply headings under each message
+      <span class="hint">Shifts headings inside replies so they sit below the “## User” / “## Claude” headings.</span></span>
+  </label>
+
+  <label class="row">
+    <input type="checkbox" id="includeCitations">
+    <span>Keep Perplexity citations
+      <span class="hint">Numbered links in the text plus a Sources list under each answer.</span></span>
+  </label>
+
+  <label class="row">
+    <input type="checkbox" id="includeThinking">
+    <span>Keep Claude’s thought process when it is expanded
+      <span class="hint">Saved inside a collapsible &lt;details&gt; block.</span></span>
+  </label>
+
+  <label class="row">
+    <input type="checkbox" id="saveAs">
+    <span>Ask where to save each file</span>
+  </label>
+
+  <div class="field">
+    <label for="subfolder">Subfolder inside Downloads</label>
+    <span class="hint">Leave empty to save straight into Downloads. Example: AI Threads</span>
+    <input type="text" id="subfolder" placeholder="AI Threads" spellcheck="false">
+  </div>
+
+  <div class="status" id="status" role="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>

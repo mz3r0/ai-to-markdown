@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head><title>Reversing lists in Python - Claude</title></head>
+<body>
+<div class="flex min-h-screen">
+  <nav class="sidebar"><a href="/new">New chat</a><a href="/recents">Recents</a></nav>
+  <main>
+    <header><button data-testid="chat-title-button"><div class="truncate">Reversing lists in Python</div></button></header>
+    <div class="flex-1 flex flex-col gap-3 px-4 max-w-3xl mx-auto w-full pt-1">
+
+      <!-- Turn 1: user -->
+      <div data-test-render-count="1">
+        <div class="mb-1 mt-1">
+          <div class="flex flex-row gap-2">
+            <div data-testid="file-thumbnail" class="rounded-lg border"><div class="text-xs">notes.txt</div><div class="text-[10px]">12 lines</div></div>
+          </div>
+          <div class="group relative inline-flex gap-2 bg-bg-300 rounded-xl">
+            <div class="shrink-0"><div class="font-bold rounded-full">MT</div></div>
+            <div data-testid="user-message" class="font-large !font-user-message grid grid-cols-1 gap-2 py-0.5 text-[0.9375rem] leading-6"><p class="whitespace-pre-wrap break-words">How do I reverse a list?
+Here is what I tried:
+
+def rev(xs):
+    for i in range(len(xs)):
+
+        pass</p><p class="whitespace-pre-wrap break-words">It doesn't work — why? Using *args and __init__ here.</p></div>
+            <div class="absolute bottom-0 right-2"><button aria-label="Edit"><svg></svg></button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Turn 1: assistant -->
+      <div data-test-render-count="1">
+        <div style="height: auto;">
+          <div data-is-streaming="false" class="group relative pb-3">
+            <div class="font-claude-response relative leading-[1.65rem] [&amp;_pre>div]:bg-bg-000/50">
+              <div class="transition-all duration-400 rounded-lg border-0.5 border-border-300 my-3">
+                <button class="group/row flex flex-row items-center justify-between gap-4 rounded-lg px-3 py-2"><span>Thought process</span><svg></svg></button>
+                <div class="overflow-hidden">
+                  <div class="px-3 pb-3">
+                    <div class="grid-cols-1 grid gap-2.5 [&amp;_&gt;_*]:min-w-0 standard-markdown"><p class="whitespace-normal break-words">The user wants to reverse a list. Mention slicing and reversed().</p></div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="grid-cols-1 grid gap-2.5 [&amp;_&gt;_*]:min-w-0 standard-markdown">
+                  <h1 class="text-2xl font-bold">Reversing a list</h1>
+                  <p class="whitespace-normal break-words">Your loop never builds a new list. Use <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">reversed()</code> or slicing — both are <strong>O(n)</strong>.</p>
+                  <div class="relative group/copy bg-bg-000/50 border-0.5 border-border-400 rounded-lg">
+                    <div class="sticky opacity-0 group-hover/copy:opacity-100 top-2 py-2 h-12 w-0 float-right">
+                      <div class="absolute right-0 h-8 px-2 items-center inline-flex z-10"><button class="inline-flex items-center justify-center" aria-label="Copy to clipboard" data-state="closed"><div class="relative"><svg width="20" height="20"><path d="M10 1"></path></svg></div></button></div>
+                    </div>
+                    <div class="text-text-500 font-small p-3.5 pb-0">python</div>
+                    <div class="overflow-x-auto">
+                      <pre class="code-block__code !my-0 !rounded-lg !text-sm !leading-relaxed" style="background: transparent; color: rgb(171, 178, 191); font-family: var(--font-mono); direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 2; hyphens: none; padding: 1em; margin: 0.5em 0px; overflow: auto; border-radius: 0.3em;"><code class="language-python" style="white-space: pre;"><span><span class="token" style="color: rgb(198, 120, 221);">def</span><span> </span><span class="token" style="color: rgb(97, 175, 239);">rev</span><span class="token" style="color: rgb(171, 178, 191);">(</span><span>xs</span><span class="token" style="color: rgb(171, 178, 191);">)</span><span class="token" style="color: rgb(171, 178, 191);">:</span><span>
+</span></span><span><span>    </span><span class="token" style="color: rgb(198, 120, 221);">return</span><span> xs</span><span class="token" style="color: rgb(171, 178, 191);">[</span><span class="token" style="color: rgb(171, 178, 191);">:</span><span class="token" style="color: rgb(171, 178, 191);">:</span><span class="token" style="color: rgb(209, 154, 102);">-1</span><span class="token" style="color: rgb(171, 178, 191);">]</span><span>
+</span></span><span>
+</span><span><span>
+</span></span><span><span class="token" style="color: rgb(198, 120, 221);">print</span><span class="token" style="color: rgb(171, 178, 191);">(</span><span>rev</span><span class="token" style="color: rgb(171, 178, 191);">(</span><span class="token" style="color: rgb(171, 178, 191);">[</span><span class="token" style="color: rgb(209, 154, 102);">1</span><span class="token" style="color: rgb(171, 178, 191);">,</span><span> </span><span class="token" style="color: rgb(209, 154, 102);">2</span><span class="token" style="color: rgb(171, 178, 191);">]</span><span class="token" style="color: rgb(171, 178, 191);">)</span><span class="token" style="color: rgb(171, 178, 191);">)</span><span>  </span><span class="token" style="color: rgb(92, 99, 112);"># [2, 1]</span></span></code></pre>
+                    </div>
+                  </div>
+                  <h2 class="text-xl font-bold">Options</h2>
+                  <ul class="[&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc space-y-1.5 pl-7">
+                    <li class="whitespace-normal break-words"><code class="bg-text-200/5">xs[::-1]</code> — returns a copy</li>
+                    <li class="whitespace-normal break-words"><code class="bg-text-200/5">xs.reverse()</code> — in place
+                      <ul class="list-disc space-y-1.5 pl-7"><li class="whitespace-normal break-words">returns <code>None</code></li><li class="whitespace-normal break-words">mutates <em>the original</em></li></ul>
+                    </li>
+                    <li class="whitespace-normal break-words"><code class="bg-text-200/5">reversed(xs)</code> — lazy iterator</li>
+                  </ul>
+                  <ol class="[&amp;:not(:last-child)_ul]:pb-1 list-decimal space-y-1.5 pl-7"><li class="whitespace-normal break-words">Pick one</li><li class="whitespace-normal break-words">Run <code>pytest -q</code></li></ol>
+                  <pre class="font-styrene border-border-100/50 overflow-x-scroll whitespace-pre-wrap rounded-lg border-0.5 border-border-300 p-3"><div class="relative"><div class="text-text-500 font-small">bash</div><code class="language-bash">pip install pytest
+pytest -q</code></div></pre>
+                  <table class="bg-bg-100 min-w-full border-separate border-spacing-0 text-sm leading-[1.88888]">
+                    <thead class="border-b-border-100/50 border-b-[0.5px] text-left"><tr class="[tbody&gt;&amp;]:odd:bg-bg-500/10"><th class="text-text-000 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] font-400 px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">Method</th><th class="px-2">Copy?</th><th class="px-2" style="text-align: right;">Cost</th></tr></thead>
+                    <tbody><tr><td class="px-2"><code>xs[::-1]</code></td><td class="px-2">yes</td><td class="px-2" style="text-align: right;">O(n)</td></tr><tr><td class="px-2"><code>a | b</code></td><td class="px-2">n/a</td><td class="px-2" style="text-align: right;">O(1)</td></tr></tbody>
+                  </table>
+                  <p class="whitespace-normal break-words">Inline math <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base">O(n)</span></span></span> and a display formula:</p>
+                  <div class="math math-display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow></mrow><annotation encoding="application/x-tex">\sum_{i=1}^{n} i = \frac{n(n+1)}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true">∑</span></span></span></div>
+                  <blockquote class="ml-2 border-l-4 border-border-300/10 pl-4 text-text-300"><p>Readability counts.</p></blockquote>
+                  <p class="whitespace-normal break-words">See the <a href="https://docs.python.org/3/library/functions.html#reversed" target="_blank" rel="noopener">Python docs</a>.<br>Thanks!</p>
+                </div>
+              </div>
+              <div class="artifact-block-cell"><div class="leading-tight text-sm line-clamp-1">List helpers</div><div class="text-sm text-text-300">Code · PYTHON</div></div>
+            </div>
+            <div class="absolute -bottom-0 -right-1.5"><div class="flex"><button>Copy</button><button>Retry</button><span class="text-text-500 text-xs">Claude can make mistakes. Please double-check responses.</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Turn 2 -->
+      <div data-test-render-count="1">
+        <div class="mb-1 mt-1"><div class="group relative inline-flex"><div data-testid="user-message" class="font-user-message"><p class="whitespace-pre-wrap break-words">Show it in JS, and a fenced example in markdown.</p></div></div></div>
+      </div>
+      <div data-test-render-count="1">
+        <div data-is-streaming="false" class="group relative pb-3">
+          <div class="font-claude-response relative">
+            <div class="grid-cols-1 grid gap-2.5 standard-markdown">
+              <p class="whitespace-normal break-words">Here:</p>
+              <div class="relative group/copy rounded-lg">
+                <div class="sticky"><div><button aria-label="Copy to clipboard"><svg></svg></button></div></div>
+                <div class="text-text-500 font-small p-3.5 pb-0">javascript</div>
+                <div class="overflow-x-auto"><pre class="code-block__code"><code class="language-javascript" style="white-space: pre;"><div class="line"><span class="kw">const</span> rev = (xs) =&gt; [...xs].reverse();</div><div class="line"></div><div class="line">console.log(rev([1, 2, 3]));</div></code></pre></div>
+              </div>
+              <div class="relative group/copy rounded-lg">
+                <div class="text-text-500 font-small p-3.5 pb-0">markdown</div>
+                <div class="overflow-x-auto"><pre class="code-block__code"><code class="language-markdown" style="white-space: pre;"><span>```js
+</span><span>console.log(1)
+</span><span>```</span></code></pre></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <fieldset class="composer"><div contenteditable="true"><p>Reply to Claude...</p></div></fieldset>
+    </div>
+  </main>
+</div>
+</body>
+</html>
