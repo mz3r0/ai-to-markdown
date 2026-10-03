@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head><title>What is Rust's ownership model? | Perplexity</title></head>
+<body>
+<div id="root">
+  <div class="h-headerHeight fixed z-10"><div class="truncate">What is Rust's ownership model?</div><button>Share</button></div>
+  <div class="@container isolate">
+    <div class="mx-auto max-w-threadContentWidth">
+      <div class="flex flex-col">
+
+        <!-- Entry 1 -->
+        <div class="pb-[var(--thread-visual-spacing)]">
+          <div class="bg-base">
+            <div class="group/query relative"><h1 class="group/query text-textMain font-display"><span class="select-text whitespace-pre-line break-words">What is Rust's ownership model?</span></h1>
+              <div class="pointer-events-none group-hover:opacity-100"><button aria-label="Edit query"><svg><use href="#pplx-icon-pencil"></use></svg></button></div></div>
+          </div>
+          <div role="tabpanel">
+            <div class="gap-sm grid grid-cols-4 md:px-0">
+              <a href="https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html" class="group"><div>What is Ownership? - The Rust Programming Language</div><div>doc.rust-lang</div></a>
+              <a href="https://en.wikipedia.org/wiki/Rust_(programming_language)" class="group"><div>Rust (programming language) - Wikipedia</div><div>wikipedia</div></a>
+            </div>
+            <div class="relative default">
+              <div id="markdown-content-0" class="gap-y-md flex flex-col">
+                <div dir="auto" class="prose text-pretty dark:prose-invert inline leading-normal break-words min-w-0 [word-break:break-word]">
+                  <p class="my-0">Rust manages memory through <strong>ownership</strong>: every value has a single owner, and the value is dropped when the owner goes out of scope.<span class="citation inline" data-state="closed"><a href="https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html" target="_blank" rel="noopener" class="citation ml-xs inline"><span class="relative select-none align-middle"><span class="rounded-badge">rust-lang</span><span>+2</span></span></a></span> Borrowing lets code use a value without taking ownership.<a href="https://en.wikipedia.org/wiki/Rust_(programming_language)" class="citation"><span>2</span></a></p>
+                  <h2 class="mb-2 mt-6">Key rules</h2>
+                  <ol class="marker:text-quiet list-decimal"><li class="py-0 my-0 prose-p:pt-0"><p class="my-0">Each value has one owner.<span class="citation inline"><a href="https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html" class="citation"><span class="rounded-badge">rust-lang</span></a></span></p></li><li class="py-0 my-0 prose-p:pt-0"><p class="my-0">There can be one owner at a time.</p></li></ol>
+                  <h3>Example</h3>
+                  <div class="w-full md:max-w-[90vw]"><pre class="not-prose w-full rounded font-mono text-sm font-extralight"><div class="codeWrapper text-light selection:text-super my-md relative flex flex-col rounded font-mono text-sm font-normal bg-subtler"><div class="translate-y-xs -translate-x-xs bottom-xl mb-xl sticky top-0 flex h-0 items-start justify-end"><button data-testid="copy-code-button" type="button" aria-label="Copy code"><svg><use href="#pplx-icon-copy"></use></svg></button></div><div class="-mt-xl"><div><div data-testid="code-language-indicator" class="text-quiet bg-subtle py-xs px-sm inline-block rounded-br rounded-tl-[3px] font-thin">rust</div></div><div class="pr-lg"><span><code style="white-space: pre;"><span><span class="token token keyword">fn</span><span> </span><span class="token token function-definition">main</span><span class="token token punctuation">(</span><span class="token token punctuation">)</span><span> </span><span class="token token punctuation">{</span><span>
+</span></span><span><span>    </span><span class="token token keyword">let</span><span> s1 </span><span class="token token operator">=</span><span> </span><span class="token token class-name">String</span><span class="token token punctuation">::</span><span class="token token function">from</span><span class="token token punctuation">(</span><span class="token token string">"hello"</span><span class="token token punctuation">)</span><span class="token token punctuation">;</span><span>
+</span></span><span><span>    </span><span class="token token keyword">let</span><span> s2 </span><span class="token token operator">=</span><span> s1</span><span class="token token punctuation">;</span><span> </span><span class="token token comment">// s1 is moved</span><span>
+</span></span><span>
+</span><span><span>    </span><span class="token token macro property">println!</span><span class="token token punctuation">(</span><span class="token token string">"{s2}"</span><span class="token token punctuation">)</span><span class="token token punctuation">;</span><span>
+</span></span><span><span></span><span class="token token punctuation">}</span><span>
+</span></span></code></span></div></div></div></pre></div>
+                  <p class="my-0">A table of moves vs copies:</p>
+                  <div class="group relative"><div class="w-full overflow-x-auto"><table class="w-full"><thead><tr><th>Type</th><th>Behaviour</th></tr></thead><tbody><tr><td><code>String</code></td><td>Move</td></tr><tr><td><code>i32</code></td><td>Copy</td></tr></tbody></table></div><div class="absolute right-0"><button>Copy table</button></div></div>
+                </div>
+              </div>
+              <div class="gap-y-sm flex flex-col"><div class="flex items-center justify-between"><div><button>Share</button><button>Rewrite</button></div><div><button>Copy</button></div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 2 -->
+        <div class="pb-[var(--thread-visual-spacing)]">
+          <div class="bg-base">
+            <div class="group/query relative"><div class="select-text whitespace-pre-line break-words">Show borrowing with a function.
+Keep it short.</div></div>
+          </div>
+          <div role="tabpanel">
+            <div class="relative default">
+              <div id="markdown-content-1" class="gap-y-md flex flex-col">
+                <div dir="auto" class="prose text-pretty dark:prose-invert">
+                  <p class="my-0">Pass a reference with <code>&amp;</code>:<span class="citation inline"><a href="https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html" class="citation"><span class="rounded-badge">rust-lang</span></a></span></p>
+                  <div class="w-full md:max-w-[90vw]"><pre class="not-prose w-full rounded font-mono text-sm"><div class="codeWrapper"><div class="sticky top-0 flex h-0"><button data-testid="copy-code-button"><svg></svg></button></div><div class="-mt-xl"><div><div data-testid="code-language-indicator">rust</div></div><div class="pr-lg"><span><code style="white-space: pre;"><span>fn len(s: &amp;String) -&gt; usize {
+</span><span>    s.len()
+</span><span>}</span></code></span></div></div></div></pre></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="related"><h2>Related</h2><div><a href="/search/more">How does the borrow checker work?</a></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="grow block"><div id="ask-input" contenteditable="true"><p>Ask a follow-up</p></div></div>
+</div>
+</body>
+</html>
